@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		959C0FD51FA7BEC700EFFEC6 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C0FD41FA7BEC700EFFEC6 /* DataWriter.swift */; };
 		95B0F09D1F883792009931E7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F09C1F883792009931E7 /* main.swift */; };
 		95B0F0AC1F8837CF009931E7 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0A91F8837CF009931E7 /* Person.swift */; };
 		95B0F0AD1F8837CF009931E7 /* Randomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0AA1F8837CF009931E7 /* Randomization.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		959C0FD41FA7BEC700EFFEC6 /* DataWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWriter.swift; sourceTree = "<group>"; };
 		95B0F0991F883792009931E7 /* Trend Simulator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Trend Simulator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B0F09C1F883792009931E7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95B0F0A91F8837CF009931E7 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				95B0F09C1F883792009931E7 /* main.swift */,
+				959C0FD41FA7BEC700EFFEC6 /* DataWriter.swift */,
 				95B0F0AF1F8837FB009931E7 /* Simulation.swift */,
 				95B0F0A91F8837CF009931E7 /* Person.swift */,
 				95B0F0AB1F8837CF009931E7 /* Product.swift */,
@@ -138,6 +141,7 @@
 				95B0F0AC1F8837CF009931E7 /* Person.swift in Sources */,
 				95B0F0B61F893317009931E7 /* Helpers.swift in Sources */,
 				95B0F0AE1F8837CF009931E7 /* Product.swift in Sources */,
+				959C0FD51FA7BEC700EFFEC6 /* DataWriter.swift in Sources */,
 				95B0F0B01F8837FB009931E7 /* Simulation.swift in Sources */,
 				95B0F0AD1F8837CF009931E7 /* Randomization.swift in Sources */,
 				95B0F09D1F883792009931E7 /* main.swift in Sources */,

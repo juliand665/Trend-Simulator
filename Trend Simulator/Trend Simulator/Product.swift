@@ -45,6 +45,12 @@ extension Product: Equatable, Hashable {
 	}
 }
 
+extension Product: Comparable {
+	static func <(l: Product, r: Product) -> Bool {
+		return l.id < r.id
+	}
+}
+
 let formatter: NumberFormatter = {
 	let formatter = NumberFormatter()
 	formatter.minimumIntegerDigits = 1

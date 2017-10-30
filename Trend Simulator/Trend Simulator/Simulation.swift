@@ -6,7 +6,7 @@ typealias Range = (min: Double, max: Double)
 
 class Simulation {
 	/// how many times the simulation ticks before printing its details again
-	let ticksPerLog = 10
+	let ticksPerLog = 100
 	
 	/// total product improvement per tick, spread over all products
 	let productImprovement = 0.01
@@ -17,7 +17,7 @@ class Simulation {
 	/// how likely it is that a new person is added to the simulation (each tick)
 	let newPersonChance = RandomChance(of: 0.01)
 	/// how loyal a user can be; loyalty is chosen at random from this range
-	let loyaltyRange: Range = (0.0, 0.1)
+	let loyaltyRange: Range = (0.0, 1.0)
 	/// upper and lower bound for the user's bias in the perception of the product's quality (as through marketing). starts out as the upper bound when first looking at a product
 	let marketingBonusRange: Range = (0.0, 10.0)
 	/// how much the bias decreases per tick as you use the product (down to the lower bound of `qualityBiasRange`)
@@ -27,9 +27,11 @@ class Simulation {
 	private(set) var products: Set<Product> = []
 	private(set) var people: Set<Person> = []
 	private var highestProductID = 0
+	private var dataWriter: DataWriter!
 	
 	init() {
 		addPerson(choosing: addProduct())
+		dataWriter = try! DataWriter(for: self)
 	}
 	
 	@discardableResult func addProduct(ofQuality quality: Double = 0) -> Product {
@@ -56,6 +58,7 @@ class Simulation {
 	func run() {
 		while true {
 			log()
+			dataWriter.writeData()
 			for _ in 1...ticksPerLog {
 				tick()
 			}
