@@ -1,1 +1,1 @@
-# Meme-Simulator
+# Trend Simulator
