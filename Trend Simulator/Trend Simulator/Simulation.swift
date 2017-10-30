@@ -11,10 +11,8 @@ class Simulation {
 	/// total product improvement per tick, spread over all products
 	let productImprovement = 0.01
 	
-	/// how likely a person is to create a new product when he can't find a better one
+	/// how likely a person is to create a new product when they can't find a better one
 	let newProductChance = RandomChance(of: 0.0001)
-	/// how much better a new product is than the one the creator is currently using
-	let newProductQualityBonus = 1
 	
 	/// how likely it is that a new person is added to the simulation (each tick)
 	let newPersonChance = RandomChance(of: 0.01)

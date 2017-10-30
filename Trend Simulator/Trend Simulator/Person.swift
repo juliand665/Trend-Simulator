@@ -49,7 +49,7 @@ class Person {
 			choose(alternative)
 		} else if simulation.newProductChance.isFulfilled() {
 			// create own product, for lack of a better choice
-			let newQuality = choice.quality + simulation.newProductQualityBonus
+			let newQuality = choice.quality
 			choose(simulation.addProduct(ofQuality: newQuality))
 		}
 	}
