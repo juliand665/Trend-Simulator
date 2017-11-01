@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		959C0FD51FA7BEC700EFFEC6 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C0FD41FA7BEC700EFFEC6 /* DataWriter.swift */; };
+		9568F7B41FAA330D00A19056 /* Graphing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568F7B31FAA330D00A19056 /* Graphing.swift */; };
+		959C0FD51FA7BEC700EFFEC6 /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C0FD41FA7BEC700EFFEC6 /* FileOutput.swift */; };
+		959C0FF11FA9E65400EFFEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C0FF01FA9E65400EFFEC6 /* AppDelegate.swift */; };
+		959C0FF31FA9E65400EFFEC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C0FF21FA9E65400EFFEC6 /* ViewController.swift */; };
+		959C0FF51FA9E65400EFFEC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959C0FF41FA9E65400EFFEC6 /* Assets.xcassets */; };
+		959C0FF81FA9E65400EFFEC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959C0FF61FA9E65400EFFEC6 /* Main.storyboard */; };
+		959C0FFF1FA9E69400EFFEC6 /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C0FD41FA7BEC700EFFEC6 /* FileOutput.swift */; };
+		959C10001FA9E69400EFFEC6 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0AF1F8837FB009931E7 /* Simulation.swift */; };
+		959C10011FA9E69400EFFEC6 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0A91F8837CF009931E7 /* Person.swift */; };
+		959C10021FA9E69400EFFEC6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0AB1F8837CF009931E7 /* Product.swift */; };
+		959C10031FA9E69400EFFEC6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0B51F893317009931E7 /* Helpers.swift */; };
+		959C10041FA9E69400EFFEC6 /* Randomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0AA1F8837CF009931E7 /* Randomization.swift */; };
+		959C10061FA9EAE600EFFEC6 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C10051FA9EAE600EFFEC6 /* Logger.swift */; };
 		95B0F09D1F883792009931E7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F09C1F883792009931E7 /* main.swift */; };
 		95B0F0AC1F8837CF009931E7 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0A91F8837CF009931E7 /* Person.swift */; };
 		95B0F0AD1F8837CF009931E7 /* Randomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0AA1F8837CF009931E7 /* Randomization.swift */; };
@@ -29,8 +41,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		959C0FD41FA7BEC700EFFEC6 /* DataWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWriter.swift; sourceTree = "<group>"; };
-		95B0F0991F883792009931E7 /* Trend Simulator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Trend Simulator"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9568F7B31FAA330D00A19056 /* Graphing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphing.swift; sourceTree = "<group>"; };
+		959C0FD41FA7BEC700EFFEC6 /* FileOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileOutput.swift; sourceTree = "<group>"; };
+		959C0FEE1FA9E65400EFFEC6 /* Trend Simulator Visual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trend Simulator Visual.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		959C0FF01FA9E65400EFFEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		959C0FF21FA9E65400EFFEC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		959C0FF41FA9E65400EFFEC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		959C0FF71FA9E65400EFFEC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		959C0FF91FA9E65400EFFEC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		959C0FFA1FA9E65400EFFEC6 /* Trend_Simulator_Visual.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Trend_Simulator_Visual.entitlements; sourceTree = "<group>"; };
+		959C10051FA9EAE600EFFEC6 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		95B0F0991F883792009931E7 /* Trend Simulator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "Trend Simulator"; path = "Trend Simulator Text"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B0F09C1F883792009931E7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95B0F0A91F8837CF009931E7 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		95B0F0AA1F8837CF009931E7 /* Randomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomization.swift; sourceTree = "<group>"; };
@@ -40,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		959C0FEB1FA9E65400EFFEC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95B0F0961F883792009931E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,10 +78,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		959C0FEF1FA9E65400EFFEC6 /* Trend Simulator Visual */ = {
+			isa = PBXGroup;
+			children = (
+				959C0FF01FA9E65400EFFEC6 /* AppDelegate.swift */,
+				959C0FF21FA9E65400EFFEC6 /* ViewController.swift */,
+				9568F7B31FAA330D00A19056 /* Graphing.swift */,
+				959C0FF41FA9E65400EFFEC6 /* Assets.xcassets */,
+				959C0FF61FA9E65400EFFEC6 /* Main.storyboard */,
+				959C0FF91FA9E65400EFFEC6 /* Info.plist */,
+				959C0FFA1FA9E65400EFFEC6 /* Trend_Simulator_Visual.entitlements */,
+			);
+			path = "Trend Simulator Visual";
+			sourceTree = "<group>";
+		};
+		959C0FFE1FA9E66100EFFEC6 /* Trend Simulator Text */ = {
+			isa = PBXGroup;
+			children = (
+				95B0F09C1F883792009931E7 /* main.swift */,
+			);
+			path = "Trend Simulator Text";
+			sourceTree = "<group>";
+		};
 		95B0F0901F883792009931E7 = {
 			isa = PBXGroup;
 			children = (
 				95B0F09B1F883792009931E7 /* Trend Simulator */,
+				959C0FFE1FA9E66100EFFEC6 /* Trend Simulator Text */,
+				959C0FEF1FA9E65400EFFEC6 /* Trend Simulator Visual */,
 				95B0F09A1F883792009931E7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				95B0F0991F883792009931E7 /* Trend Simulator */,
+				959C0FEE1FA9E65400EFFEC6 /* Trend Simulator Visual.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,8 +122,8 @@
 		95B0F09B1F883792009931E7 /* Trend Simulator */ = {
 			isa = PBXGroup;
 			children = (
-				95B0F09C1F883792009931E7 /* main.swift */,
-				959C0FD41FA7BEC700EFFEC6 /* DataWriter.swift */,
+				959C0FD41FA7BEC700EFFEC6 /* FileOutput.swift */,
+				959C10051FA9EAE600EFFEC6 /* Logger.swift */,
 				95B0F0AF1F8837FB009931E7 /* Simulation.swift */,
 				95B0F0A91F8837CF009931E7 /* Person.swift */,
 				95B0F0AB1F8837CF009931E7 /* Product.swift */,
@@ -83,9 +136,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		95B0F0981F883792009931E7 /* Trend Simulator */ = {
+		959C0FED1FA9E65400EFFEC6 /* Trend Simulator Visual */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95B0F0A01F883792009931E7 /* Build configuration list for PBXNativeTarget "Trend Simulator" */;
+			buildConfigurationList = 959C0FFB1FA9E65400EFFEC6 /* Build configuration list for PBXNativeTarget "Trend Simulator Visual" */;
+			buildPhases = (
+				959C0FEA1FA9E65400EFFEC6 /* Sources */,
+				959C0FEB1FA9E65400EFFEC6 /* Frameworks */,
+				959C0FEC1FA9E65400EFFEC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Trend Simulator Visual";
+			productName = "Trend Simulator Visual";
+			productReference = 959C0FEE1FA9E65400EFFEC6 /* Trend Simulator Visual.app */;
+			productType = "com.apple.product-type.application";
+		};
+		95B0F0981F883792009931E7 /* Trend Simulator Text */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95B0F0A01F883792009931E7 /* Build configuration list for PBXNativeTarget "Trend Simulator Text" */;
 			buildPhases = (
 				95B0F0951F883792009931E7 /* Sources */,
 				95B0F0961F883792009931E7 /* Frameworks */,
@@ -95,7 +165,7 @@
 			);
 			dependencies = (
 			);
-			name = "Trend Simulator";
+			name = "Trend Simulator Text";
 			productName = "Trend Simulator";
 			productReference = 95B0F0991F883792009931E7 /* Trend Simulator */;
 			productType = "com.apple.product-type.tool";
@@ -110,6 +180,10 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Julian Dunskus";
 				TargetAttributes = {
+					959C0FED1FA9E65400EFFEC6 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
 					95B0F0981F883792009931E7 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -122,18 +196,48 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 95B0F0901F883792009931E7;
 			productRefGroup = 95B0F09A1F883792009931E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95B0F0981F883792009931E7 /* Trend Simulator */,
+				95B0F0981F883792009931E7 /* Trend Simulator Text */,
+				959C0FED1FA9E65400EFFEC6 /* Trend Simulator Visual */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		959C0FEC1FA9E65400EFFEC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				959C0FF51FA9E65400EFFEC6 /* Assets.xcassets in Resources */,
+				959C0FF81FA9E65400EFFEC6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		959C0FEA1FA9E65400EFFEC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				959C10011FA9E69400EFFEC6 /* Person.swift in Sources */,
+				9568F7B41FAA330D00A19056 /* Graphing.swift in Sources */,
+				959C10031FA9E69400EFFEC6 /* Helpers.swift in Sources */,
+				959C10001FA9E69400EFFEC6 /* Simulation.swift in Sources */,
+				959C0FF31FA9E65400EFFEC6 /* ViewController.swift in Sources */,
+				959C0FFF1FA9E69400EFFEC6 /* FileOutput.swift in Sources */,
+				959C10041FA9E69400EFFEC6 /* Randomization.swift in Sources */,
+				959C0FF11FA9E65400EFFEC6 /* AppDelegate.swift in Sources */,
+				959C10021FA9E69400EFFEC6 /* Product.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95B0F0951F883792009931E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,16 +245,60 @@
 				95B0F0AC1F8837CF009931E7 /* Person.swift in Sources */,
 				95B0F0B61F893317009931E7 /* Helpers.swift in Sources */,
 				95B0F0AE1F8837CF009931E7 /* Product.swift in Sources */,
-				959C0FD51FA7BEC700EFFEC6 /* DataWriter.swift in Sources */,
+				959C0FD51FA7BEC700EFFEC6 /* FileOutput.swift in Sources */,
 				95B0F0B01F8837FB009931E7 /* Simulation.swift in Sources */,
 				95B0F0AD1F8837CF009931E7 /* Randomization.swift in Sources */,
 				95B0F09D1F883792009931E7 /* main.swift in Sources */,
+				959C10061FA9EAE600EFFEC6 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		959C0FF61FA9E65400EFFEC6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				959C0FF71FA9E65400EFFEC6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		959C0FFC1FA9E65400EFFEC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Trend Simulator Visual/Trend_Simulator_Visual.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V2EPDFA9PV;
+				INFOPLIST_FILE = "Trend Simulator Visual/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.juliand665.Trend-Simulator-Visual";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		959C0FFD1FA9E65400EFFEC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Trend Simulator Visual/Trend_Simulator_Visual.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V2EPDFA9PV;
+				INFOPLIST_FILE = "Trend Simulator Visual/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.juliand665.Trend-Simulator-Visual";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		95B0F09E1F883792009931E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -280,6 +428,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		959C0FFB1FA9E65400EFFEC6 /* Build configuration list for PBXNativeTarget "Trend Simulator Visual" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				959C0FFC1FA9E65400EFFEC6 /* Debug */,
+				959C0FFD1FA9E65400EFFEC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		95B0F0941F883792009931E7 /* Build configuration list for PBXProject "Trend Simulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -289,7 +446,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95B0F0A01F883792009931E7 /* Build configuration list for PBXNativeTarget "Trend Simulator" */ = {
+		95B0F0A01F883792009931E7 /* Build configuration list for PBXNativeTarget "Trend Simulator Text" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95B0F0A11F883792009931E7 /* Debug */,

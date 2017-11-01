@@ -2,5 +2,5 @@
 
 import Foundation
 
-let simulation = Simulation()
+let simulation = Simulation(using: [Logger(), try! FileOutput()])
 simulation.run()

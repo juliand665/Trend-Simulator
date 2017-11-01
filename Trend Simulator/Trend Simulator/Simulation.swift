@@ -17,21 +17,22 @@ class Simulation {
 	/// how likely it is that a new person is added to the simulation (each tick)
 	let newPersonChance = RandomChance(of: 0.01)
 	/// how loyal a user can be; loyalty is chosen at random from this range
-	let loyaltyRange: Range = (0.0, 1.0)
+	let loyaltyRange: Range = (0.0, 0.1)
 	/// upper and lower bound for the user's bias in the perception of the product's quality (as through marketing). starts out as the upper bound when first looking at a product
 	let marketingBonusRange: Range = (0.0, 10.0)
 	/// how much the bias decreases per tick as you use the product (down to the lower bound of `qualityBiasRange`)
 	let marketingBonusDecrease = 0.01
 	
+	let outputters: [Outputter]
+	
 	private(set) var currentTick = 0
 	private(set) var products: Set<Product> = []
 	private(set) var people: Set<Person> = []
-	private var highestProductID = 0
-	private var dataWriter: DataWriter!
+	private(set) var highestProductID = 0
 	
-	init() {
+	init(using outputters: [Outputter]) {
+		self.outputters = outputters
 		addPerson(choosing: addProduct())
-		dataWriter = try! DataWriter(for: self)
 	}
 	
 	@discardableResult func addProduct(ofQuality quality: Double = 0) -> Product {
@@ -57,8 +58,7 @@ class Simulation {
 	
 	func run() {
 		while true {
-			log()
-			dataWriter.writeData()
+			outputters.forEach { $0.output(self) }
 			for _ in 1...ticksPerLog {
 				tick()
 			}
@@ -80,35 +80,8 @@ class Simulation {
 			people.insert(Person(in: self))
 		}
 	}
-	
-	func log() {
-		print("""
-			
-			tick \(currentTick)
-			—————
-			
-			\(people.count) people
-			\(products.count) active products (\(highestProductID) total)
-			
-			Top products:
-			""")
-		let topProducts = products.sorted { (l, r) -> Bool in
-			l.users.count > r.users.count
-		}
-		for rank in 1...5 {
-			let productDesc = topProducts.element(at: rank - 1)?.description ?? "-"
-			print("\(rank). \(productDesc)")
-		}
-		print("""
-			
-			Best products:
-			""")
-		let bestProducts = products.sorted { (l, r) -> Bool in
-			l.quality > r.quality
-		}
-		for rank in 1...5 {
-			let productDesc = bestProducts.element(at: rank - 1)?.description ?? "-"
-			print("\(rank). \(productDesc)")
-		}
-	}
+}
+
+protocol Outputter {
+	func output(_ simulation: Simulation)
 }

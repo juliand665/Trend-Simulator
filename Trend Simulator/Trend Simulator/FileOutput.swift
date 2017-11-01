@@ -2,14 +2,11 @@
 
 import AppKit
 
-class DataWriter {
+class FileOutput: Outputter {
 	var popularityFile: FileHandle
 	var qualityFile: FileHandle
-	unowned var simulation: Simulation
 	
-	init(for simulation: Simulation) throws {
-		self.simulation = simulation
-		
+	init() throws {
 		let desktop = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
 		assert(FileManager.default.createFile(atPath: desktop.appendingPathComponent("popularity.csv").path, contents: Data()))
 		popularityFile = try FileHandle(forWritingTo: desktop.appendingPathComponent("popularity.csv"))
@@ -17,7 +14,7 @@ class DataWriter {
 		qualityFile = try FileHandle(forWritingTo: desktop.appendingPathComponent("quality.csv"))
 	}
 	
-	func writeData() {
+	func output(_ simulation: Simulation) {
 		var popularity = "\(simulation.currentTick)"
 		var quality = popularity
 		
