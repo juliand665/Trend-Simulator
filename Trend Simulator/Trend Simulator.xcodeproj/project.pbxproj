@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9568F7B41FAA330D00A19056 /* Graphing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568F7B31FAA330D00A19056 /* Graphing.swift */; };
+		9528B6901FAE0B16007CF14E /* PopularityGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B68F1FAE0B16007CF14E /* PopularityGraph.swift */; };
+		9528B6921FAE0B30007CF14E /* QualityGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B6911FAE0B30007CF14E /* QualityGraph.swift */; };
+		9568F7B41FAA330D00A19056 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568F7B31FAA330D00A19056 /* GraphView.swift */; };
 		959C0FD51FA7BEC700EFFEC6 /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C0FD41FA7BEC700EFFEC6 /* FileOutput.swift */; };
 		959C0FF11FA9E65400EFFEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C0FF01FA9E65400EFFEC6 /* AppDelegate.swift */; };
 		959C0FF31FA9E65400EFFEC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C0FF21FA9E65400EFFEC6 /* ViewController.swift */; };
@@ -26,6 +28,7 @@
 		95B0F0AE1F8837CF009931E7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0AB1F8837CF009931E7 /* Product.swift */; };
 		95B0F0B01F8837FB009931E7 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0AF1F8837FB009931E7 /* Simulation.swift */; };
 		95B0F0B61F893317009931E7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B0F0B51F893317009931E7 /* Helpers.swift */; };
+		95F575A51FAB1B9B000E83AB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C10051FA9EAE600EFFEC6 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,7 +44,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9568F7B31FAA330D00A19056 /* Graphing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphing.swift; sourceTree = "<group>"; };
+		9528B68F1FAE0B16007CF14E /* PopularityGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityGraph.swift; sourceTree = "<group>"; };
+		9528B6911FAE0B30007CF14E /* QualityGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityGraph.swift; sourceTree = "<group>"; };
+		9568F7B31FAA330D00A19056 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		959C0FD41FA7BEC700EFFEC6 /* FileOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileOutput.swift; sourceTree = "<group>"; };
 		959C0FEE1FA9E65400EFFEC6 /* Trend Simulator Visual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trend Simulator Visual.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959C0FF01FA9E65400EFFEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +88,9 @@
 			children = (
 				959C0FF01FA9E65400EFFEC6 /* AppDelegate.swift */,
 				959C0FF21FA9E65400EFFEC6 /* ViewController.swift */,
-				9568F7B31FAA330D00A19056 /* Graphing.swift */,
+				9568F7B31FAA330D00A19056 /* GraphView.swift */,
+				9528B6911FAE0B30007CF14E /* QualityGraph.swift */,
+				9528B68F1FAE0B16007CF14E /* PopularityGraph.swift */,
 				959C0FF41FA9E65400EFFEC6 /* Assets.xcassets */,
 				959C0FF61FA9E65400EFFEC6 /* Main.storyboard */,
 				959C0FF91FA9E65400EFFEC6 /* Info.plist */,
@@ -226,13 +233,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9528B6921FAE0B30007CF14E /* QualityGraph.swift in Sources */,
 				959C10011FA9E69400EFFEC6 /* Person.swift in Sources */,
-				9568F7B41FAA330D00A19056 /* Graphing.swift in Sources */,
+				9568F7B41FAA330D00A19056 /* GraphView.swift in Sources */,
 				959C10031FA9E69400EFFEC6 /* Helpers.swift in Sources */,
 				959C10001FA9E69400EFFEC6 /* Simulation.swift in Sources */,
 				959C0FF31FA9E65400EFFEC6 /* ViewController.swift in Sources */,
+				95F575A51FAB1B9B000E83AB /* Logger.swift in Sources */,
 				959C0FFF1FA9E69400EFFEC6 /* FileOutput.swift in Sources */,
 				959C10041FA9E69400EFFEC6 /* Randomization.swift in Sources */,
+				9528B6901FAE0B16007CF14E /* PopularityGraph.swift in Sources */,
 				959C0FF11FA9E65400EFFEC6 /* AppDelegate.swift in Sources */,
 				959C10021FA9E69400EFFEC6 /* Product.swift in Sources */,
 			);
