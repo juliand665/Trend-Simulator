@@ -3,47 +3,76 @@
 import Cocoa
 
 class GraphView: NSView, Outputter {
+	typealias Entry = [Int: Double]
+	
 	let historyMax = 128
-	private(set) var history: [[Int: Double]] = []
+	private(set) var fullHistory: [Entry] = []
+	var history: ArraySlice<Entry> {
+		return fullHistory.suffix(historyMax)
+	}
 	
 	func output(_ simulation: Simulation) {
-		history.append(historyEntry(from: simulation))
-		if history.count > historyMax {
-			history.removeFirst()
-		}
+		fullHistory.append(historyEntry(from: simulation))
 		
 		DispatchQueue.main.async { 
 			self.needsDisplay = true
 		}
 	}
 	
-	func historyEntry(from simulation: Simulation) -> [Int: Double] {
+	func historyEntry(from simulation: Simulation) -> Entry {
 		fatalError("historyEntry(from:) must be overridden!")
 	}
 	
-	override func draw(_ dirtyRect: NSRect) {
-		prepareForDrawing()
+	func draw<History>(_ history: History, in context: CGContext, height: CGFloat) where History: Collection, History.Element == GraphView.Entry, History.IndexDistance == Int {
+		prepareForDrawing(in: context)
 		
-		let width = frame.width / CGFloat(history.count)
-		for (index, entry) in history.enumerated() {
-			let x = CGFloat(index) * width
-			guard x + width > dirtyRect.minX, x < dirtyRect.maxX else { continue }
-			draw(entry, at: x, width: width)
+		let width: CGFloat = 1
+		var x: CGFloat = 0
+		for entry in history {
+			draw(entry, at: x, width: width, height: height, in: context)
+			x += width
 		}
 		
-		finalizeDrawing()
+		finalizeDrawing(in: context)
 	}
 	
-	func prepareForDrawing() {
+	override func draw(_ dirtyRect: NSRect) {
+		let context = NSGraphicsContext.current!.cgContext
+		context.saveGState()
+		let scale = frame.width / CGFloat(historyMax)
+		context.scaleBy(x: scale, y: scale)
+		
+		draw(history, in: context, height: frame.height / scale)
+		
+		context.restoreGState()
+	}
+	
+	func prepareForDrawing(in context: CGContext) {
 		
 	}
 	
-	func draw(_ entry: [Int: Double], at x: CGFloat, width: CGFloat) {
-		fatalError("draw(_:x:width:) must be overridden!")
+	func draw(_ entry: Entry, at x: CGFloat, width: CGFloat, height: CGFloat, in context: CGContext) {
+		fatalError("draw(_:x:width:in:) must be overridden!")
 	}
 	
-	func finalizeDrawing() {
+	func finalizeDrawing(in context: CGContext) {
 		
+	}
+	
+	func fullImage() -> CGImage {
+		let width = fullHistory.count
+		let height = 512
+		let context = CGContext(data: nil,
+								width: width,
+								height: height,
+								bitsPerComponent: 8,
+								bytesPerRow: 4 * width,
+								space: CGColorSpaceCreateDeviceRGB(),
+								bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+		
+		draw(fullHistory, in: context, height: CGFloat(height))
+		
+		return context.makeImage()!
 	}
 	
 	func color(forID id: Int) -> NSColor {

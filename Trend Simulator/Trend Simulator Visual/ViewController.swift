@@ -2,9 +2,12 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, Outputter {
 	@IBOutlet weak var popularityGraph: PopularityGraph!
 	@IBOutlet weak var qualityGraph: QualityGraph!
+	@IBOutlet weak var maxTickLabel: NSTextField!
+	@IBOutlet weak var minQualityLabel: NSTextField!
+	@IBOutlet weak var maxQualityLabel: NSTextField!
 	
 	var simulationThread: Thread?
 	var simulation: Simulation!
@@ -12,8 +15,17 @@ class ViewController: NSViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		simulation = Simulation(using: [popularityGraph, qualityGraph])
+		qualityGraph.maxQualityLabel = maxQualityLabel
+		qualityGraph.minQualityLabel = minQualityLabel
+		
+		simulation = Simulation(using: [self, popularityGraph, qualityGraph])
 		resumeSimulation()
+	}
+	
+	func output(_ simulation: Simulation) {
+		DispatchQueue.main.async {
+			self.maxTickLabel.stringValue = "Tick \(simulation.currentTick)"
+		}
 	}
 	
 	func pauseSimulation() {
@@ -34,5 +46,24 @@ class ViewController: NSViewController {
 				resumeSimulation()
 			}
 		}
+		if event.characters == "s" {
+			let panel = NSOpenPanel()
+			panel.canChooseDirectories = true
+			panel.canChooseFiles = false
+			panel.prompt = "Save Here"
+			panel.beginSheetModal(for: view.window!) { (response) in
+				if response == .OK, let url = panel.url {
+					self.saveImage(for: self.popularityGraph, to: url.appendingPathComponent("popularity.png"))
+					self.saveImage(for: self.qualityGraph, to: url.appendingPathComponent("quality.png"))
+				}
+			}
+		}
+	}
+	
+	func saveImage(for graphView: GraphView, to url: URL) {
+		let image = graphView.fullImage()
+		let representation = NSBitmapImageRep(cgImage: image)
+		let data = representation.representation(using: .png, properties: [:])!
+		try! data.write(to: url)
 	}
 }

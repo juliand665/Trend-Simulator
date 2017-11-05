@@ -707,29 +707,62 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Trend_Simulator_Visual" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="340"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="489"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fillEqually" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0j8-hF-XOM">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="340"/>
+                            <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0j8-hF-XOM">
+                                <rect key="frame" x="0.0" y="8" width="480" height="473"/>
                                 <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xnR-pS-tZF">
+                                        <rect key="frame" x="-2" y="456" width="484" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Tick" id="u6X-Ic-nLB">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="DaG-Aw-irr" customClass="PopularityGraph" customModule="Trend_Simulator_Visual" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="174" width="480" height="166"/>
+                                        <rect key="frame" x="0.0" y="253" width="480" height="195"/>
                                     </customView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tV0-pN-DSv">
+                                        <rect key="frame" x="6" y="228" width="468" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Highest Quality" id="5nP-Cj-Faa">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-MM-dRE" customClass="QualityGraph" customModule="Trend_Simulator_Visual" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="480" height="166"/>
+                                        <rect key="frame" x="0.0" y="25" width="480" height="195"/>
                                     </customView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gFT-hQ-HUz">
+                                        <rect key="frame" x="6" y="0.0" width="468" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Lowest Quality" id="fBS-3Y-LOx">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="DaG-Aw-irr" firstAttribute="width" secondItem="0j8-hF-XOM" secondAttribute="width" id="DVT-D2-X3f"/>
                                     <constraint firstItem="8Qi-MM-dRE" firstAttribute="height" secondItem="DaG-Aw-irr" secondAttribute="height" id="Jjd-zP-qhm"/>
                                     <constraint firstItem="8Qi-MM-dRE" firstAttribute="width" secondItem="0j8-hF-XOM" secondAttribute="width" id="MaG-uf-KVL"/>
+                                    <constraint firstItem="gFT-hQ-HUz" firstAttribute="width" secondItem="0j8-hF-XOM" secondAttribute="width" constant="-16" id="QcE-fc-Ema"/>
+                                    <constraint firstItem="xnR-pS-tZF" firstAttribute="width" secondItem="0j8-hF-XOM" secondAttribute="width" id="f8L-cM-O1W"/>
+                                    <constraint firstItem="tV0-pN-DSv" firstAttribute="width" secondItem="0j8-hF-XOM" secondAttribute="width" constant="-16" id="yFT-Wx-ohY"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
@@ -737,12 +770,15 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="0j8-hF-XOM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Aqp-tI-DB2"/>
-                            <constraint firstAttribute="bottom" secondItem="0j8-hF-XOM" secondAttribute="bottom" id="DWV-Rc-tEG"/>
+                            <constraint firstItem="0j8-hF-XOM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="IrT-Wu-CeI"/>
+                            <constraint firstAttribute="bottom" secondItem="0j8-hF-XOM" secondAttribute="bottom" constant="8" id="LVT-69-2QJ"/>
                             <constraint firstAttribute="trailing" secondItem="0j8-hF-XOM" secondAttribute="trailing" id="bmF-ga-GB3"/>
-                            <constraint firstItem="0j8-hF-XOM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="dM1-NQ-bpD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="maxQualityLabel" destination="tV0-pN-DSv" id="W8r-FV-amG"/>
+                        <outlet property="maxTickLabel" destination="xnR-pS-tZF" id="LtM-Qq-Z5X"/>
+                        <outlet property="minQualityLabel" destination="gFT-hQ-HUz" id="Aai-Ox-KyL"/>
                         <outlet property="popularityGraph" destination="DaG-Aw-irr" id="s14-U3-b04"/>
                         <outlet property="qualityGraph" destination="8Qi-MM-dRE" id="hZP-vi-8wr"/>
                     </connections>

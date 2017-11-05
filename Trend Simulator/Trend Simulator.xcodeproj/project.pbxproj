@@ -63,6 +63,7 @@
 		95B0F0AB1F8837CF009931E7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		95B0F0AF1F8837FB009931E7 /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		95B0F0B51F893317009931E7 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		95D5343E1FAF775A003586B3 /* Trend Simulator Visual.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Trend Simulator Visual.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +87,7 @@
 		959C0FEF1FA9E65400EFFEC6 /* Trend Simulator Visual */ = {
 			isa = PBXGroup;
 			children = (
+				95D5343E1FAF775A003586B3 /* Trend Simulator Visual.entitlements */,
 				959C0FF01FA9E65400EFFEC6 /* AppDelegate.swift */,
 				959C0FF21FA9E65400EFFEC6 /* ViewController.swift */,
 				9568F7B31FAA330D00A19056 /* GraphView.swift */,
@@ -281,7 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Trend Simulator Visual/Trend_Simulator_Visual.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Trend Simulator Visual/Trend Simulator Visual.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V2EPDFA9PV;
@@ -297,7 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Trend Simulator Visual/Trend_Simulator_Visual.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Trend Simulator Visual/Trend Simulator Visual.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V2EPDFA9PV;

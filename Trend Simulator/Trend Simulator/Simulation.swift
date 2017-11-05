@@ -17,13 +17,15 @@ class Simulation {
 	/// how likely it is that a new person is added to the simulation (each tick)
 	let newPersonChance = RandomChance(of: 0.01)
 	/// how loyal a user can be; loyalty is chosen at random from this range
-	let loyaltyRange: Range = (0.0, 0.01)
+	let loyaltyRange: Range = (0.0, 0.1)
 	/// upper and lower bound for the user's bias in the perception of the product's quality (as through marketing). starts out as the upper bound when first looking at a product
-	let marketingBonusRange: Range = (0.0, 10.0)
+	let marketingBonusRange: Range = (0.0, 1.0)
 	/// how much the bias decreases per tick as you use the product (down to the lower bound of `qualityBiasRange`)
 	let marketingBonusDecrease = 0.01
 	
 	let outputters: [Outputter]
+	
+	var maxTick: Int?
 	
 	private(set) var currentTick = 0
 	private(set) var products: Set<Product> = []
@@ -58,6 +60,9 @@ class Simulation {
 	
 	func run() {
 		while !Thread.current.isCancelled {
+			if let max = maxTick, currentTick >= max {
+				return
+			}
 			for _ in 1...ticksPerLog {
 				tick()
 			}
