@@ -61,7 +61,7 @@ class GraphView: NSView, Outputter {
 	
 	func fullImage() -> CGImage {
 		let width = fullHistory.count
-		let height = 512
+		let height = 500
 		let context = CGContext(data: nil,
 								width: width,
 								height: height,

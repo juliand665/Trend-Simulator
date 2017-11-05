@@ -18,7 +18,7 @@ class ViewController: NSViewController, Outputter {
 		qualityGraph.maxQualityLabel = maxQualityLabel
 		qualityGraph.minQualityLabel = minQualityLabel
 		
-		simulation = Simulation(using: [self, popularityGraph, qualityGraph])
+		simulation = Simulation(until: 10_000, using: [self, popularityGraph, qualityGraph])
 		resumeSimulation()
 	}
 	
