@@ -18,14 +18,18 @@ class ViewController: NSViewController, Outputter {
 		qualityGraph.maxQualityLabel = maxQualityLabel
 		qualityGraph.minQualityLabel = minQualityLabel
 		
-		simulation = Simulation(until: 10_000, using: [self, popularityGraph, qualityGraph])
-		resumeSimulation()
+		startSimulation()
 	}
 	
 	func output(_ simulation: Simulation) {
 		DispatchQueue.main.async {
 			self.maxTickLabel.stringValue = "Tick \(simulation.currentTick)"
 		}
+	}
+	
+	func startSimulation() {
+		simulation = Simulation(until: 10_000, using: [self, popularityGraph, qualityGraph])
+		resumeSimulation()
 	}
 	
 	func pauseSimulation() {
@@ -45,6 +49,17 @@ class ViewController: NSViewController, Outputter {
 			} else {
 				resumeSimulation()
 			}
+		}
+		if event.characters == "l" {
+			popularityGraph.toggleLiveUpdate()
+			qualityGraph.toggleLiveUpdate()
+		}
+		if event.characters == "r" {
+			popularityGraph.reset()
+			qualityGraph.reset()
+			pauseSimulation()
+			simulation.stop()
+			startSimulation()
 		}
 		if event.characters == "s" {
 			let panel = NSOpenPanel()

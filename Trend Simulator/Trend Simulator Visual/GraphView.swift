@@ -5,17 +5,29 @@ import Cocoa
 class GraphView: NSView, Outputter {
 	typealias Entry = [Int: Double]
 	
-	let historyMax = 128
+	var isLiveUpdating = true
+	
+	let historyMax = 1000
 	private(set) var fullHistory: [Entry] = []
 	var history: ArraySlice<Entry> {
 		return fullHistory.suffix(historyMax)
 	}
 	
+	func toggleLiveUpdate() {
+		isLiveUpdating = !isLiveUpdating
+	}
+	
+	func reset() {
+		fullHistory = []
+	}
+	
 	func output(_ simulation: Simulation) {
 		fullHistory.append(historyEntry(from: simulation))
 		
-		DispatchQueue.main.async { 
-			self.needsDisplay = true
+		if isLiveUpdating {
+			DispatchQueue.main.async { 
+				self.needsDisplay = true
+			}
 		}
 	}
 	
