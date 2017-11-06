@@ -38,7 +38,7 @@ class Simulation {
 	}
 	
 	func stop() {
-		outputters = [] // to break up any reference cycles
+		outputters = [] // to break up any reference cycles (hopefully)
 	}
 	
 	@discardableResult func addProduct(ofQuality quality: Double = 0) -> Product {

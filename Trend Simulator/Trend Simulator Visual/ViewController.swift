@@ -43,36 +43,49 @@ class ViewController: NSViewController, Outputter {
 	}
 	
 	override func keyDown(with event: NSEvent) {
-		if event.characters == " " {
+		switch event.characters ?? "" {
+		case " ":
 			if let _ = simulationThread {
 				pauseSimulation()
 			} else {
 				resumeSimulation()
 			}
-		}
-		if event.characters == "l" {
+		case "l":
 			popularityGraph.toggleLiveUpdate()
 			qualityGraph.toggleLiveUpdate()
-		}
-		if event.characters == "r" {
+		case "r":
 			popularityGraph.reset()
 			qualityGraph.reset()
 			pauseSimulation()
 			simulation.stop()
 			startSimulation()
-		}
-		if event.characters == "s" {
+		case "s":
 			let panel = NSOpenPanel()
 			panel.canChooseDirectories = true
 			panel.canChooseFiles = false
 			panel.prompt = "Save Here"
 			panel.beginSheetModal(for: view.window!) { (response) in
 				if response == .OK, let url = panel.url {
+					self.saveText(to: url.appendingPathComponent("details.txt"))
 					self.saveImage(for: self.popularityGraph, to: url.appendingPathComponent("popularity.png"))
 					self.saveImage(for: self.qualityGraph, to: url.appendingPathComponent("quality.png"))
 				}
 			}
+		default:
+			break
 		}
+	}
+	
+	func saveText(to url: URL) {
+		let max = simulation.products.map { $0.quality }.max()!
+		let data = """
+			Ticks: \(simulation.currentTick)
+			Loyalty: \(simulation.loyaltyRange)
+			Marketing: \(simulation.marketingBonusRange)
+			Max Quality: \(max)
+			""".data(using: .utf8)!
+		try! data.write(to: url)
+		
 	}
 	
 	func saveImage(for graphView: GraphView, to url: URL) {
