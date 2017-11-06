@@ -17,9 +17,9 @@ class Simulation {
 	/// how likely it is that a new person is added to the simulation (each tick)
 	let newPersonChance = RandomChance(of: 0.01)
 	/// how loyal a user can be; loyalty is chosen at random from this range
-	let loyaltyRange: Range = (0.0, 0.0)
+	let loyaltyRange: Range = (0.0, 10)
 	/// upper and lower bound for the user's bias in the perception of the product's quality (as through marketing). starts out as the upper bound when first looking at a product
-	let marketingBonusRange: Range = (0.0, 0.02)
+	let marketingBonusRange: Range = (0.0, 10)
 	/// how much the bias decreases per tick as you use the product (down to the lower bound of `qualityBiasRange`)
 	let marketingBonusDecrease = 0.01
 	
