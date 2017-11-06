@@ -28,7 +28,7 @@ class ViewController: NSViewController, Outputter {
 	}
 	
 	func startSimulation() {
-		simulation = Simulation(until: 10_000, using: [self, popularityGraph, qualityGraph])
+		simulation = Simulation(until: 100_000, using: [self, popularityGraph, qualityGraph])
 		resumeSimulation()
 	}
 	

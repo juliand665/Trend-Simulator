@@ -31,7 +31,7 @@ class Product {
 			simulation.remove(self)
 			return
 		}
-		quality += simulation.productImprovement * Double(users.count) / Double(simulation.people.count)
+		quality += simulation.productImprovement * Double(users.count)
 	}
 }
 
